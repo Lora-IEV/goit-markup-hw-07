@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 6</title>
+    <title>Homework 7</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,26 +13,26 @@
 </head>
 <body>
     <header>
-        <div class="container head-cont">
-            <nav class="head-nav">
+        <div class="container page-header">
+            <nav class="page-header__nav">
                 <!-- Logo -->
-                <a class="logo" href="index.html"><span class="web">Web</span><span class="studio-logo">Studio</span></a>
+                <a class="logo" href="index.html"><span class="logo--first-part">Web</span><span class="logo--second-part">Studio</span></a>
                 <!-- Header menu -->
-                <ul class="header-nav list">
-                    <li class="nav-item"><a href="index.html" class="link current">Студия</a></li>
-                    <li class="nav-item"><a href="portfolio.html" class="link">Портфолио</a></li>
-                    <li class="nav-item"><a href="#" class="link">Контакты</a></li>
+                <ul class="website-nav list">
+                    <li class="website-nav__item"><a href="index.html" class="website-nav__link website-nav__link--current">Студия</a></li>
+                    <li class="website-nav__item"><a href="portfolio.html" class="website-nav__link">Портфолио</a></li>
+                    <li class="website-nav__item"><a href="#" class="website-nav__link">Контакты</a></li>
                 </ul>
             </nav>
             <!-- Contacts -->
             <ul class="header-address list">
-                 <li class="address-item"><a href="mailto:info@devstudio.com" class="link">
-                   <svg class="icon-envelope" width="16" height="12">
+                 <li class="header-address__item"><a href="mailto:info@devstudio.com" class="header-address__link">
+                   <svg class="header-address__icon--envelope" width="16" height="12">
                        <use href="images/symbols.svg#icon-envelope"></use> 
                    </svg> 
                     info@devstudio.com</a></li>
-                 <li class="address-item"><a href="tel:+380961111111" class="link">
-                    <svg class="icon-smartphone" width="10" height="16">
+                 <li class="header-address__item"><a href="tel:+380961111111" class="header-address__link">
+                    <svg class="header-address__icon--smartphone" width="10" height="16">
                         <use href="images/symbols.svg#icon-smartphone"></use>
                     </svg> 
                     +38 096 111 11 11</a></li>
@@ -42,49 +42,49 @@
     <main>
         <!-- HERO -->
         <section class="hero">
-            <h1 class="hero-title">Эффективные решения <br> для вашего бизнеса</h1>
-            <button data-modal-open class="button-hero">Заказать услугу</button>
+            <h1 class="hero__title">Эффективные решения <br> для вашего бизнеса</h1>
+            <button data-modal-open class="hero__button">Заказать услугу</button>
         </section>
         <section>
-            <div class="container advantages-container">
+            <div class="container advantages">
                 <!-- Скрытый заголовок -->
-                <h2 class="visually-hidden">Наши преимущества</h2>
-                <ul class="our-advantages">
-                    <li class="list-advantages">
-                        <div class="icon-advantage-box">
-                            <svg class="advantage-icon">
+                <h2 class="advantages__title--hidden">Наши преимущества</h2>
+                <ul class="advantages-set">
+                    <li class="advantages-set__item">
+                        <div class="advantages-set__icon-box">
+                            <svg class="advantages-set__icon">
                                 <use href="./images/symbols.svg#icon-antenna"></use>
                             </svg>
                         </div>
-                        <h3>Внимание к деталям</h3>
-                        <p>Идейные соображения, а также начало повседневной работы по формированию позиции.</p>
+                        <h3 class="advantages-set__subtitle">Внимание к деталям</h3>
+                        <p class="advantages-set__text">Идейные соображения, а также начало повседневной работы по формированию позиции.</p>
                     </li>
-                    <li class="list-advantages">
-                        <div class="icon-advantage-box">
-                            <svg class="advantage-icon">
+                    <li class="advantages-set__item">
+                        <div class="advantages-set__icon-box">
+                            <svg class="advantages-set__icon">
                                  <use href="./images/symbols.svg#icon-clock"></use>
                             </svg>
                         </div>
-                        <h3>Пунктуальность</h3>
-                        <p>Задача организации, в особенности же рамки и место обучения кадров влечет за собой.</p>
+                        <h3 class="advantages-set__subtitle">Пунктуальность</h3>
+                        <p class="advantages-set__text">Задача организации, в особенности же рамки и место обучения кадров влечет за собой.</p>
                      </li>
-                    <li class="list-advantages">
-                        <div class="icon-advantage-box">
-                            <svg class="advantage-icon">
+                    <li class="advantages-set__item">
+                        <div class="advantages-set__icon-box">
+                            <svg class="advantages-set__icon">
                                 <use href="./images/symbols.svg#icon-diagram"></use>
                             </svg>
                         </div>
-                        <h3>Планирование</h3>
-                        <p>Равным образом консультация с широким активом в значительной степени обуславливает.</p>
+                        <h3 class="advantages-set__subtitle">Планирование</h3>
+                        <p class="advantages-set__text">Равным образом консультация с широким активом в значительной степени обуславливает.</p>
                      </li>
-                      <li class="list-advantages">
-                        <div class="icon-advantage-box">
-                            <svg class="advantage-icon">
+                      <li class="advantages-set__item">
+                        <div class="advantages-set__icon-box">
+                            <svg class="advantages-set__icon">
                                 <use href="./images/symbols.svg#icon-astronaut"></use>
                             </svg>
                         </div>
-                        <h3>Современные технологии</h3>
-                        <p>Значимость этих проблем настолько очевидна, что реализация плановых заданий.</p>
+                        <h3 class="advantages-set__subtitle">Современные технологии</h3>
+                        <p class="advantages-set__text">Значимость этих проблем настолько очевидна, что реализация плановых заданий.</p>
                      </li>
                   </ul>
             </div>
