@@ -879,13 +879,13 @@ header {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.backdrop--hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
 
-.backdrop.is-hidden .modal {
+.backdrop--hidden.modal {
   transform: translate(-50%, -50%) scale(0.5);
 }
 
@@ -903,7 +903,7 @@ header {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-button {
+.modal__close-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -918,12 +918,12 @@ header {
   cursor: pointer;
 }
 
-.close-button:hover,
-.close-button:focus {
+.modal__close-button:hover,
+.modal__close-button:focus {
   fill: var(--blue);
 }
 
-.modal-title {
+.form__title {
   margin: 0 0 12px 0;
   font-size: 20px;
   font-weight: 700;
@@ -932,17 +932,22 @@ header {
   color: var(--pre-black);
 }
 
-.form-field {
+.form__item {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-.input-thumb {
+.form__thumb {
   position: relative;
 }
 
-.form-svg {
+.form__thumb:hover form__input,
+.form__thumb:hover form__textarea {
+  cursor: pointer;
+}
+
+.form__icon {
   position: absolute;
   left: 12px;
   top: 50%;
@@ -952,7 +957,7 @@ header {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.label-legend {
+.form__label {
   margin-bottom: 4px;
   font-size: 12px;
   font-weight: 400;
@@ -961,7 +966,7 @@ header {
   color: var(--grey);
 }
 
-.form-input {
+.form__input {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 11px 12px 11px 42px;
@@ -971,7 +976,13 @@ header {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.textarea {
+.form__textarea {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  resize: none;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   margin-left: auto;
@@ -980,43 +991,34 @@ header {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus,
-.form-input:hover {
+.form__input:focus,
+.form__input:hover {
   border-color: var(--blue);
 }
 
-.textarea:focus,
-.textarea:hover {
+.form__textarea:focus,
+.form__textarea:hover {
   border-color: var(--blue);
 }
 
-.form-input:focus + .form-svg,
-.form-input:hover + .form-svg {
+.form__input:focus + .form__icon,
+.form__input:hover + .form__icon {
   fill: var(--blue);
 }
 
-.form-field:focus-within .form-input {
+.form__item:focus-within .form__input {
   border-color: var(--blue);
   outline: none;
   cursor: text;
 }
 
-.form-field:focus-within .textarea {
+.form__item:focus-within .form__textarea {
   border-color: var(--blue);
   outline: none;
   cursor: text;
 }
 
-.textarea {
-  margin-bottom: 20px;
-  padding: 12px 16px;
-  resize: none;
-  height: 120px;
-  font-size: 12px;
-  line-height: 1.17;
-}
-
-.textarea::placeholder {
+.form__textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
   font-weight: 400;
   font-size: 12px;
@@ -1025,8 +1027,11 @@ header {
   padding-left: 0;
 }
 
-.policy-field {
+.form__policy-field {
+  display: block;
+  align-items: center;
   margin-bottom: 30px;
+
   color: var(--grey);
   font-size: 12px;
   line-height: 1.17;
@@ -1035,7 +1040,7 @@ header {
   text-align: center;
 }
 
-.modal-button {
+.form__button {
   display: block;
   padding: 10px 55px;
   margin: 30px auto 0px auto;
@@ -1054,29 +1059,19 @@ header {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover,
-.modal-button:focus {
+.form__button:hover,
+.form__button:focus {
   background-color: var(--blue-hover);
 }
 
-.input-thumb:hover input,
-.input-thumb:hover textarea {
-  cursor: pointer;
-}
-
-.check-input {
+.form__policy-check {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   position: absolute;
 }
 
-.policy-field {
-  display: block;
-  align-items: center;
-}
-
-.icon-check {
+.form__icon-check {
   margin-right: 8px;
   display: inline-block;
   width: 16px;
@@ -1085,7 +1080,7 @@ header {
   border-radius: 2px;
 }
 
-.check-input:checked + .icon-check {
+.form__policy-check:checked + .form__icon-check {
   background-color: var(--blue);
   background-image: url('../images/check-icon.svg');
   background-size: contain;
@@ -1093,7 +1088,7 @@ header {
   border: 1px solid var(--blue);
 }
 
-.policy-field a {
+.form__policy-field a {
   margin-left: 2px;
   color: var(--blue);
   font-weight: 400;
