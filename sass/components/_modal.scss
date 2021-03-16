@@ -46,11 +46,11 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
-}
 
-.modal__close-button:hover,
-.modal__close-button:focus {
-  fill: $blue;
+  &:hover,
+  &:focus {
+    fill: $blue;
+  }
 }
 
 .form__title {
@@ -70,11 +70,11 @@
 
 .form__thumb {
   position: relative;
-}
 
-.form__thumb:hover form__input,
-.form__thumb:hover form__textarea {
-  cursor: pointer;
+  &:hover form__input,
+  &:hover form__textarea {
+    cursor: pointer;
+  }
 }
 
 .form__icon {
@@ -104,6 +104,22 @@
   margin-right: auto;
   width: 448px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus,
+  &:hover {
+    border-color: $blue;
+  }
+
+  .form__item:focus-within & {
+    border-color: $blue;
+    outline: none;
+    cursor: text;
+  }
+
+  &:focus + .form__icon,
+  &:hover + .form__icon {
+    fill: $blue;
+  }
 }
 
 .form__textarea {
@@ -119,42 +135,26 @@
   margin-right: auto;
   width: 448px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form__input:focus,
-.form__input:hover {
-  border-color: $blue;
-}
+  &:focus,
+  &:hover {
+    border-color: $blue;
+  }
 
-.form__textarea:focus,
-.form__textarea:hover {
-  border-color: $blue;
-}
+  .form__item:focus-within & {
+    border-color: $blue;
+    outline: none;
+    cursor: text;
+  }
 
-.form__input:focus + .form__icon,
-.form__input:hover + .form__icon {
-  fill: $blue;
-}
-
-.form__item:focus-within .form__input {
-  border-color: $blue;
-  outline: none;
-  cursor: text;
-}
-
-.form__item:focus-within .form__textarea {
-  border-color: $blue;
-  outline: none;
-  cursor: text;
-}
-
-.form__textarea::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  padding-left: 0;
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    padding-left: 0;
+  }
 }
 
 .form__policy-field {
@@ -187,11 +187,11 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.form__button:hover,
-.form__button:focus {
-  background-color: $blue-hover;
+  &:hover,
+  &:focus {
+    background-color: $blue-hover;
+  }
 }
 
 .form__policy-check {
@@ -199,6 +199,14 @@
   -moz-appearance: none;
   appearance: none;
   position: absolute;
+
+  &:checked + .form__icon-check {
+    background-color: $blue;
+    background-image: url('../images/check-icon.svg');
+    background-size: contain;
+    background-origin: border-box;
+    border: 1px solid $blue;
+  }
 }
 
 .form__icon-check {
@@ -208,14 +216,6 @@
   height: 15px;
   border: 1px solid $pre-black;
   border-radius: 2px;
-}
-
-.form__policy-check:checked + .form__icon-check {
-  background-color: $blue;
-  background-image: url('../images/check-icon.svg');
-  background-size: contain;
-  background-origin: border-box;
-  border: 1px solid $blue;
 }
 
 .form__link {

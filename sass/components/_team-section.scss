@@ -34,10 +34,10 @@
   background: $white;
   box-shadow: $team-shadow;
   border-radius: 0px 0px 4px 4px;
-}
 
-.team__item:not(:first-child) {
-  margin-left: 30px;
+  &:not(:first-child) {
+    margin-left: 30px;
+  }
 }
 
 .team__card {
@@ -87,11 +87,12 @@
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: $blue;
+    fill: $white;
+    outline: none;
+  }
 }
 
-.social-network-icons__link:hover,
-.social-network-icons__link:focus {
-  background-color: $blue;
-  fill: $white;
-  outline: none;
-}

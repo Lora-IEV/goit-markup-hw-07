@@ -56,11 +56,13 @@
 
 .address__item {
   display: flex;
+
+  &:last-child {
+    margin-top: 9px;
+  }
 }
 
-.address__item:last-child {
-  margin-top: 9px;
-}
+
 
 .address__link {
   font-family: inherit;
@@ -103,12 +105,12 @@
   fill: $white;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.connect-container__link:hover,
-.connect-container__link:focus {
-  background-color: $blue;
-  outline: none;
+  &:hover,
+  &:focus {
+    background-color: $blue;
+    outline: none;
+  }
 }
 
 .sign {
@@ -157,10 +159,10 @@
   cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.sign__button:hover {
-  background-color: $blue-hover;
+  &:hover {
+    background-color: $blue-hover;
+  }
 }
 
 .sign__icon {
